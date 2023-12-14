@@ -4,28 +4,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dimitri Hoareau's Portfolio</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body class="body-class">
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#about-section">About Me</a></li>
+            <li><a href="#projects-section">Projects</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+    </nav>
     <header class="header-class">
         <h1 class="title-class">Dimitri Hoareau</h1>
         <p class="subtitle-class">Web Developer | Python Enthusiast | Software Craftsman</p>
     </header>
 
-    <section class="about-section">
+    <section id="about-section" class="about-section">
         <h2 class="heading-class">About Me</h2>
         <p class="text-class">Hi, I'm Dimitri! I'm a passionate software engineer with a love for Python and building web applications...</p>
     </section>
 
-    <section class="projects-section">
+    <section id="projects-section" class="projects-section">
         <h2 class="heading-class">My Projects</h2>
         <!-- Project entries -->
     </section>
 
-    <section class="contact-section">
+    <section id="contact-section" class="contact-section">
         <h2 class="heading-class">Contact Me</h2>
-        <p class="text-class">Email: your-email@example.com</p>
+        <p class="text-class">Email: dimitrihoareau2@gmail.com</p>
     </section>
 
     <footer class="footer-class">
