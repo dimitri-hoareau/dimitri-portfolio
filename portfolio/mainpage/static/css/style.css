@@ -55,7 +55,7 @@ body {
 }
 
 .padding-class {
-    padding: 20px 10%;
+    padding: 20px 8%;
 }
 
 .test-logo {
@@ -89,10 +89,10 @@ body {
     width: 600px;
 }
 
-.test-about-image {
+.about-image {
     height: 400px;
-    width: 350px;
-    background: #fff;
+    width: auto;
+    border-radius: 10px;
 }
 
 .heading-class {
@@ -106,4 +106,85 @@ text-align: center;
 
 .about-text {
     line-height: 1.5em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4em;
+}
+
+.contact-text {
+    margin: 4em 0;
+}
+
+
+.social-media a {
+    font-size: 24px; /* Icon size */
+    color: #151516; /* LinkedIn brand color, you can choose your own */
+    margin: 2em; /* Spacing between icons */
+    text-decoration: none;
+    /* other styles */
+}
+
+p i {
+    margin-right: 1em;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 90%;
+}
+
+.project {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin: 1em;
+    width: 28%;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .project {
+        flex-basis: calc(50% - 20px); /* Adjust for 2 projects per row on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project {
+        flex-basis: 100%; /* Adjust for 1 project per row on very small screens */
+    }
+}
+
+.more-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.more-btn:hover {
+    background-color: #555; /* Button hover background color */
+}
+
+.footer-text-class {
+    text-align: center;
 }
