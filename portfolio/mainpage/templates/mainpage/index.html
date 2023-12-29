@@ -4,32 +4,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dimitri Hoareau's Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bienvenue sur le portfolio de Dimitri Hoareau, développeur web spécialisé en Python et ancien enseignant. Découvrez mes projets web, mon parcours de reconversion et mes compétences en développement. Disponible pour des missions freelance en full remote.">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body class="body-class">
-    <header class="header-class">
-        <h1 class="title-class">Dimitri Hoareau</h1>
-        <p class="subtitle-class">Web Developer | Python Enthusiast | Software Craftsman</p>
-    </header>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#about-section">About Me</a></li>
+            <li><a href="#projects-section">Projects</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- <main class="main-class"> -->
+        <header class="header-class padding-class">
+            <div>
+                <div class="test-logo"></div>
+                <h1 class="title-class">Dimitri Hoareau</h1>
+                <p class="subtitle-class">Web Developer | Python Enthusiast | Software Craftsman</p>
+            </div>
+            <div class="test-main-image">
+            </div>
 
-    <section class="about-section">
-        <h2 class="heading-class">About Me</h2>
-        <p class="text-class">Hi, I'm Dimitri! I'm a passionate software engineer with a love for Python and building web applications...</p>
-    </section>
+        </header>
+    
+        <section id="about-section" class="about-section padding-class">
+            <img class="about-image" src="{% static 'images/dimitri.jpeg' %}" alt="About Me Image">
+            <div class="about-class-content">
+                <h2 class="about-heading-class">About Me</h2>
+                <p class="about-text">Après 5 années dans l'éducation nationale à enseigner l'histoire  je prends la décision de me reconvertir dans le numérique. Aujourd'hui, avec 3 années d'expérience en entreprise, j'ai acquis une expertise solide dans le développement d'applications web, avec une prédilection pour les projets en Python.</p>
+                <p class="about-text">Je suis à la recherche de missions freelance en full remote. Si vous cherchez un développeur web passionné, adaptable, et doté d'une solide expérience en entreprise, n'hésitez pas à me contacter pour discuter de votre projet.</p>
+                <button> Mon cv</button>
+            </div>
 
-    <section class="projects-section">
-        <h2 class="heading-class">My Projects</h2>
-        <!-- Project entries -->
-    </section>
+        </section>
+    
+        <section id="projects-section" class="projects-section padding-class">
+            <h2 class="heading-class">My Projects</h2>
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project">
+                    <h3>Project 1 Title</h3>
+                    <p>A short description of Project 1. This can detail the technologies used, the purpose of the project, and any other relevant information.</p>
+                    <button class="more-btn">More</button>
+                </div>
+                <!-- Project 2 -->
+                <div class="project">
+                    <h3>Project 2 Title</h3>
+                    <p>Description of Project 2...</p>
+                    <button class="more-btn">More</button>
+                </div>
+                <!-- Project 3 -->
+                <div class="project">
+                    <h3>Project 3 Title</h3>
+                    <p>Description of Project 3...</p>
+                    <button class="more-btn">More</button>
+                </div>
+                <!-- Project 4 -->
+                <div class="project">
+                    <h3>Project 4 Title</h3>
+                    <p>Description of Project 4...</p>
+                    <button class="more-btn">More</button>
+                </div>
+                <!-- Project 5 -->
+                <div class="project">
+                    <h3>Project 5 Title</h3>
+                    <p>Description of Project 5...</p>
+                    <button class="more-btn">More</button>
+                </div>
+            </div>
+        </section>
+        
+    
+        <section id="contact-section" class="contact-section padding-class">
+            <h2 class="heading-class">Contact Me</h2>
+            <div class="footer-container">
+                <div>
+                    <p class="text-class contact-text">
+                        <i class="fas fa-envelope"></i> dimitrihoareau2@gmail.com
+                    </p>
+                    <!-- Phone Icon -->
+                    <p class="text-class contact-text">
+                        <i class="fas fa-phone"></i> 0786815493
+                    </p>
+                    <!-- Address Icon -->
+                    <p class="text-class contact-text">
+                        <i class="fas fa-map-marker-alt"></i> 97434 - Saint gilles les Bains
+                    </p>
+                    <div class="social-media">
+                        <!-- Add GitHub Link -->
+                        <a href="https://github.com/dimitri-hoareau" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <!-- Add LinkedIn Link -->
+                        <a href="https://www.linkedin.com/in/dimitri-hoareau" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
 
-    <section class="contact-section">
-        <h2 class="heading-class">Contact Me</h2>
-        <p class="text-class">Email: your-email@example.com</p>
-    </section>
-
-    <footer class="footer-class">
-        <p class="footer-text-class">© 2023 Dimitri's Portfolio</p>
-    </footer>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3414.5146612836706!2d55.224726085667136!3d-21.050495627478213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21829202baec36af%3A0x4179392cc8ea209f!2s42%20Chem.%20Summer%20N%C2%B0%201%2C%20St%20Paul%2097434%2C%20La%20R%C3%A9union!5e0!3m2!1sfr!2sfr!4v1702644625517!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        
+    
+        <footer class="footer-class">
+            <p class="footer-text-class">© 2023 Dimitri's Portfolio</p>
+        </footer>
+    <!-- </main> -->
 </body>
 </html>
