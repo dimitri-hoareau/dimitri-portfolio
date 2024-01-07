@@ -8,7 +8,7 @@ body {
 
 .header-class, .about-section, .projects-section, .contact-section{
     /* width: 100%; */
-    height: 100vh; 
+    height: 100vh;
 }
 
 .header-class, .about-section {
@@ -26,7 +26,7 @@ body {
     overflow: hidden;
     position: sticky;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .nav-links {
