@@ -42,3 +42,4 @@ To use Docker for running the application, follow these steps:
 - Build and run the application with Docker Compose:
 
 This command will build the Docker containers specified in `docker-compose.dev.yml` and start the database service.
+
