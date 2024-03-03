@@ -1,0 +1,37 @@
+name : Quality Assurance
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container: python:3.11.4-slim-buster
+
+
+    services:
+      db:
+        image: postgres:16
+        environment:
+          - POSTGRES_USER=portfolio
+          - POSTGRES_PASSWORD=portfolio
+          - POSTGRES_DB=portfolio
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+
+      # - name: lint
+      #   run: commande pour flake8 ?
+
+      - name: Run tests
+        run: pytest
+
+
+    
