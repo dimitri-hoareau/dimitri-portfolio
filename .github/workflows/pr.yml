@@ -40,6 +40,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
     strategy:
       max-parallel: 4
       matrix:
@@ -57,6 +59,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       env:
-        CSRF_TRUSTED_ORIGINS: "https://dimitrihoareau.fr"
+        CSRF_TRUSTED_ORIGINS: ${{ secrets.CSRF_TRUSTED_ORIGINS }}
       run: |
         pytest
