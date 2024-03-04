@@ -31,6 +31,19 @@ jobs:
         run: |
           pytest
 
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        docker build . --file Dockerfile --tag dimitrihoareau/portfolioapp:latest
+        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+        docker push dimitrihoareau/portfolioapp:latest
+
+
   # build:
   #   needs: test
   #   runs-on: ubuntu-latest
@@ -40,18 +53,6 @@ jobs:
   #         docker build -t dimitrihoareau/portfolioapp:latest .
   #         docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
   #         docker push dimitrihoareau/portfolioapp:latest
-
-  build:
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-    run: |
-      docker build . --file Dockerfile --tag dimitrihoareau/portfolioapp:latest
-      docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-      docker push dimitrihoareau/portfolioapp:latest
 
 
   # deploy:
