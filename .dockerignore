@@ -1,0 +1,55 @@
+# Fichiers et dossiers Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv
+env
+ENV
+build
+develop-eggs
+dist
+downloads
+eggs
+.eggs
+lib
+lib64
+parts
+sdist
+var
+*.egg-info
+.installed.cfg
+*.egg
+
+# Fichiers et dossiers de cache
+.cache
+.pytest_cache
+
+# Fichiers et dossiers de développement/test
+*.log
+*.sqlite3
+*.db
+
+# Fichiers de configuration spécifiques
+.env
+.env.dev
+.dockerenv
+
+# Fichiers de contrôle de version
+.git
+.gitignore
+
+# Fichiers et dossiers de l'éditeur
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Autres fichiers et dossiers
+# Dockerfile*
+*docker-compose*.yml
+README.md
+LICENSE
+.dockerignore
