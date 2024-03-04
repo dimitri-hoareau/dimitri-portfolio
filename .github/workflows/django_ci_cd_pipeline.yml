@@ -32,6 +32,7 @@ jobs:
           pytest
 
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Build and Push Docker Image
