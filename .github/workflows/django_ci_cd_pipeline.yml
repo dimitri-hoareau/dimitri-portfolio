@@ -44,25 +44,40 @@ jobs:
         docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
         docker push dimitrihoareau/portfolioapp:latest
 
+
   deploy:
     runs-on: ubuntu-latest
-    needs: build
-    if: success()
+    environment:
+      name: ${{ github.ref_name }}
+      url: ${{ steps.deploy.outputs.vm_url }}
     steps:
-    - uses: actions/checkout@v3
+      - id: deploy
+        name: Deploy
+        uses: bitovi/github-actions-deploy-docker-to-ec2@v0.5.0
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_default_region: eu-west-3
+          app_port: 8000
+
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   if: success()
+  #   steps:
+  #   - uses: actions/checkout@v3
   
-    - name: Deploy to EC2
-      env:
-        EC2_HOST: ${{ secrets.EC2_HOST }}
-        EC2_USER: ${{ secrets.EC2_USER }}
-        EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
-      run: |
-        echo "$EC2_SSH_KEY" > ec2_ssh_key.pem
-        chmod 600 ec2_ssh_key.pem
-        ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && docker-compose pull web && docker-compose up -d --build web"
-      
-        
-        
+  #   - name: Deploy to EC2
+  #     env:
+  #       EC2_HOST: ${{ secrets.EC2_HOST }}
+  #       EC2_USER: ${{ secrets.EC2_USER }}
+  #       EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+  #     run: |
+  #       echo "$EC2_SSH_KEY" > ec2_ssh_key.pem
+  #       chmod 600 ec2_ssh_key.pem
+  #       ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && docker-compose pull web && docker-compose up -d --build web"
+
+
 
 
 
