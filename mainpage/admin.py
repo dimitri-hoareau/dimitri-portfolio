@@ -1,3 +1,6 @@
-# from django.contrib import admin
+from django.contrib import admin
 
-# Register your models here.
+from mainpage.models import Project
+
+admin.site.register(Project)
+
