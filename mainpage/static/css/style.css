@@ -139,43 +139,43 @@ p i {
     height: 90%;
 }
 
-/* .project {
-    background-color: #fff;
-    color: #0B162C;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    margin: 1em;
-    width: 28%;
+.skills-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 6em;
+
 }
 
-.project img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-} */
-
-/* 
-
-.more-btn {
-    padding: 10px 20px;
-    background-color: #0B162C;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.skills-list-item {
+    margin: 2em;
+    font-size: 1.2em;
 }
-
-.more-btn:hover {
-    background-color: #555; /* Button hover background color 
-} 
-*/
 
 .footer-text-class {
     text-align: center;
+}
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.skills-section, .projects-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cv_button {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 15px;
+    background-color: #0b162c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin: 4px 2px; /* Marges autour du bouton */
+    cursor: pointer; /* Curseur en forme de pointeur */
 }
