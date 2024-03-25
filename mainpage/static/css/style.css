@@ -179,3 +179,7 @@ p i {
     margin: 4px 2px; /* Marges autour du bouton */
     cursor: pointer; /* Curseur en forme de pointeur */
 }
+
+.fab{
+    color:#e0e0e0
+}
