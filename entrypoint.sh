@@ -11,6 +11,8 @@ then
     echo "PostgreSQL started"
 fi
 
+mkdir -p /usr/src/app/static
+
 # python manage.py flush --no-input # NEVER USE IN PRODUCTION
 python manage.py migrate
 python manage.py collectstatic --noinput
