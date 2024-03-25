@@ -7,11 +7,11 @@ from mainpage.models import Project, Tool
 class ToolSerializer(ModelSerializer):
     class Meta:
         model = Tool
-        fields = ['id', 'name']
+        fields = ['name']
 
 
 class ProjectSerializer(ModelSerializer):
-    
+
     tools = ToolSerializer(many=True, read_only=True)
  
     class Meta:
