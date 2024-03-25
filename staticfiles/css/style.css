@@ -2,31 +2,31 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: #0B162C;
     color: #e0e0e0;
 }
 
-.header-class, .about-section, .projects-section, .contact-section{
+.header-class, .about-section, .projects-section, .contact-section, .skills-section{
     /* width: 100%; */
-    height: 100vh; 
+    height: 100vh;
 }
 
 .header-class, .about-section {
     display: flex;
     align-items: center;
 }
-.about-section, .contact-section {
+.about-section, .projects-section {
     justify-content: space-around;
     background-color: #e0e0e0;
-    color: #333;
+    color: #0B162C;
 }
 
 .navbar {
-    background-color: #333;
+    background-color: #0B162C;
     overflow: hidden;
     position: sticky;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .nav-links {
@@ -141,7 +141,7 @@ p i {
 
 .project {
     background-color: #fff;
-    color: #333;
+    color: #0B162C;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -173,7 +173,7 @@ p i {
 
 .more-btn {
     padding: 10px 20px;
-    background-color: #333;
+    background-color: #0B162C;
     color: #fff;
     border: none;
     border-radius: 5px;

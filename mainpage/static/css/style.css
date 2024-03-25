@@ -139,7 +139,7 @@ p i {
     height: 90%;
 }
 
-.project {
+/* .project {
     background-color: #fff;
     color: #0B162C;
     padding: 20px;
@@ -157,19 +157,9 @@ p i {
     width: 100%;
     height: auto;
     border-radius: 10px;
-}
+} */
 
-@media screen and (max-width: 768px) {
-    .project {
-        flex-basis: calc(50% - 20px); /* Adjust for 2 projects per row on smaller screens */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .project {
-        flex-basis: 100%; /* Adjust for 1 project per row on very small screens */
-    }
-}
+/* 
 
 .more-btn {
     padding: 10px 20px;
@@ -182,8 +172,9 @@ p i {
 }
 
 .more-btn:hover {
-    background-color: #555; /* Button hover background color */
-}
+    background-color: #555; /* Button hover background color 
+} 
+*/
 
 .footer-text-class {
     text-align: center;
