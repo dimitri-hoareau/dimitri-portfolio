@@ -227,17 +227,19 @@ p i {
         text-align: center;
         margin-top: -200px;
       }
-
-    .about-section, .projects-section {
-        display: flex;
-        flex-direction: column;
+      .about-image{
+        display: none;
       }
+
       .skills-list-item {
         margin: 1em;
         font-size: 1em;
       }
       .footer-map{
         display: none;
+      }
+      contact-text {
+        text-align: center;
       }
   }
 
@@ -254,7 +256,5 @@ p i {
       .title-class {
         font-size: 4.5em;
       }
-      .about-image{
-        display: none;
-      }
+
   }
