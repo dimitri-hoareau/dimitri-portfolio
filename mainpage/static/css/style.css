@@ -14,6 +14,11 @@ body {
 .header-class, .about-section {
     display: flex;
     align-items: center;
+
+}
+.header-class{
+
+    flex-direction: column;
 }
 .about-section, .projects-section {
     justify-content: space-around;
@@ -64,15 +69,19 @@ body {
     border-radius: 100%;
     background: #fff;
 }
+.title-box{
+margin: auto;
+text-align: center;
 
+}
 
 .title-class {
     font-size: 6em;
-    width: 500px;
 }
 
 .subtitle-class {
     font-size: 2em;
+    margin: 2em;
 }
 
 .test-main-image {
@@ -183,3 +192,69 @@ p i {
 .fab{
     color:#e0e0e0
 }
+
+.fa-chevron-down {
+    color: #e0e0e0;
+    font-size: 4em;
+    margin-top: 4em;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .arrow-down a {
+    animation: bounce 1s infinite;
+    display: inline-block; 
+  }
+
+  #root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+
+@media screen and (max-width: 1250px) {
+    .about-class-content {
+        width: 80%;
+        text-align: center;
+        margin-top: -200px;
+      }
+
+    .about-section, .projects-section {
+        display: flex;
+        flex-direction: column;
+      }
+      .skills-list-item {
+        margin: 1em;
+        font-size: 1em;
+      }
+      .footer-map{
+        display: none;
+      }
+  }
+
+@media screen and (max-width: 500px) {
+    .project_image_container {
+        width: 250px !important;
+        height: 120px !important;
+      }
+
+      .project{
+        width: 230px !important;
+        height: 400px !important;
+      }
+      .title-class {
+        font-size: 4.5em;
+      }
+      .about-image{
+        display: none;
+      }
+  }
