@@ -1,25 +1,7 @@
+
+{% extends 'mainpage/base.html' %}
+{% block content %}
 {% load static %}
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bienvenue sur le portfolio de Dimitri Hoareau, développeur web spécialisé en Python et ancien enseignant. Découvrez mes projets web, mon parcours de reconversion et mes compétences en développement. Disponible pour des missions freelance en full remote.">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'frontend/assets/index-B7jMB0eU.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body class="body-class">
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#about-section">À Propos</a></li>
-            <li><a href="#skills-section">Compétences</a></li>
-            <li><a href="#projects-section">Projets</a></li>
-            <li><a href="#contact-section">Contact</a></li>
-        </ul>
-    </nav>
         <header class="header-class">
             <div class="title-box">
                 <h1 class="title-class">Dimitri Hoareau</h1>
@@ -119,14 +101,4 @@
         </section>
 
 
-        <footer class="footer-class">
-            <p class="footer-text-class">© 2023 Dimitri's Portfolio</p>
-        </footer>
-</body>
-</html>
-
-
-
-<script>
-
-</script>
+        {% endblock %}

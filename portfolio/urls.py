@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from mainpage.views import index
+from mainpage.views import index, mentions, cookies
 from projectapi.views import ProjectAPIView
 
 
@@ -26,6 +26,8 @@ from projectapi.views import ProjectAPIView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('mentions', mentions, name='mentions'),
+    path('cookies', cookies, name='cookies'),
     path('api-auth/', include('rest_framework.urls')),
     path('api/projects/', ProjectAPIView.as_view()),
 ]
