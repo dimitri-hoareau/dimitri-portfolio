@@ -3,34 +3,40 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bienvenue sur le portfolio de Dimitri Hoareau, développeur web spécialisé en Python et ancien enseignant. Découvrez mes projets web, mon parcours de reconversion et mes compétences en développement. Disponible pour des missions freelance en full remote.">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mention-cookies.css' %}">
-    <link rel="stylesheet" href="{% static 'frontend/assets/index-B7jMB0eU.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body class="body-class">
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="/#about-section">À Propos</a></li>
-            <li><a href="/#skills-section">Compétences</a></li>
-            <li><a href="/#projects-section">Projets</a></li>
-            <li><a href="/#contact-section">Contact</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bienvenue sur le portfolio de Dimitri Hoareau, développeur web spécialisé en Python et ancien enseignant. Découvrez mes projets web, mon parcours de reconversion et mes compétences en développement. Disponible pour des missions freelance en full remote.">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/mention-cookies.css' %}">
+        <link rel="stylesheet" href="{% static 'frontend/assets/index-B7jMB0eU.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    </head>
+    <body class="body-class">
+        <nav class="navbar">
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/#about-section">À Propos</a></li>
+                <li><a href="/#skills-section">Compétences</a></li>
+                <li><a href="/#projects-section">Projets</a></li>
+                <li><a href="/#contact-section">Contact</a></li>
+            </ul>
+        </nav>
 
-        {% block content %}
-        {% endblock %}
+            {% block content %}
+            {% endblock %}
 
 
-        <footer class="footer-class">
-            <a class="footer-text-class" href="mentions">Mentions légales</a>
-            <a class="footer-text-class" href="/">© 2023 Dimitri's Portfolio</a>
-            <a class="footer-text-class" href="cookies">Politique en matière de cookies</a>
-        </footer>
-</body>
+            <footer class="footer-class">
+                <a class="footer-text-class" href="mentions">Mentions légales</a>
+                <a class="footer-text-class" href="/">© 2023 Dimitri's Portfolio</a>
+                <a class="footer-text-class" href="cookies">Politique en matière de cookies</a>
+            </footer>
+        <script src="{% static 'js/navbar-menu.js' %}"></script>
+    </body>
 </html>
 
