@@ -213,29 +213,7 @@ p i {
     margin-top: 4em;
 }
 
-@keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
 
-  @keyframes appears {
-    from {color: #0B162C;}
-    to {color: #e0e0e0;}
-  }
-
-  .appears {
-    animation-name: appears;
-    animation-duration: 4s;
-  }
-  
-  .arrow-down a {
-    animation: bounce 1s infinite;
-    display: inline-block; 
-  }
 
   #root{
     display: flex;
@@ -357,3 +335,56 @@ p i {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes appears {
+    from {color: #0B162C;}
+    to {color: #e0e0e0;}
+  }
+
+  .appears {
+    animation-name: appears;
+    animation-duration: 4s;
+  }
+  
+  .arrow-down a {
+    animation: bounce 1s infinite;
+    display: inline-block; 
+  }
+  
+  .right-transition {
+    animation: 2s ease-out 0s 1 slideInFromRight;
+  }
+  
+  .left-transition {
+    animation: 2s ease-out 0s 1 slideInFromLeft;
+  }
