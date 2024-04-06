@@ -33,6 +33,18 @@ document.querySelector('.burger').addEventListener('click', () => {
     document.querySelector('.burger .line3').classList.toggle('toggle');
 });
 
+function closeNavLink() {
+    const navLinkArray = document.getElementsByClassName("nav-link");
+    for (const link of navLinkArray) {
+        link.addEventListener("click", () => {
+            document.querySelector('.nav-links').classList.toggle('burger-active');
+        });
+    }
+}
+
+if (window.matchMedia("(max-width: 500px)").matches) {
+    closeNavLink();
+}
 
 
 const aboutText = document.querySelectorAll('.about-text');

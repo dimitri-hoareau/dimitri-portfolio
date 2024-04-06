@@ -168,7 +168,7 @@ p i {
 
 .skills-list-item {
     margin: 2em;
-    font-size: 1.2em;
+    font-size: 2vh;
 }
 
 .footer-text-class {
@@ -241,7 +241,7 @@ p i {
 
       .skills-list-item {
         margin: 1em;
-        font-size: 1em;
+        font-size: 1.8vh;
       }
       .footer-map{
         display: none;
@@ -266,7 +266,10 @@ p i {
       }
       .skills-list-item {
         margin: 0.8em;
-        font-size: 0.8em;
+        font-size: 1.6vh;
+      }
+      .about-text {
+        line-height: 1.2em;
       }
 
   }
