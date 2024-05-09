@@ -54,9 +54,6 @@ jobs:
     if: success()
     steps:
       - uses: actions/checkout@v3
-      - name: Set Docker Image Tags
-        run: |
-          sed -i "s/\${TAG}/${{ github.sha }}/g" docker-compose.yml
       - name: Deploy to EC2
         env:
           EC2_HOST: ${{ secrets.EC2_HOST }}
@@ -65,7 +62,8 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > ec2_ssh_key.pem
           chmod 600 ec2_ssh_key.pem
-          ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && git pull && docker-compose pull && docker-compose up -d --build"
+          ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && git pull && sed -i 's/\${TAG}/${{ github.sha }}/g' docker-compose.yml && cat docker-compose.yml && docker-compose pull && docker-compose up -d --build"
+
 
 
 
