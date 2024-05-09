@@ -11,20 +11,19 @@ then
     echo "PostgreSQL started"
 fi
 
-# # Initialisation du répertoire de fichiers médias
-# if [ -z "$(ls -A /usr/src/app/mediafiles)" ]; then
-#    echo "Initializing media files..."
-#    cp -a /usr/src/app/initial_media/. /usr/src/app/mediafiles/
-#    echo "Media files initialized. Current contents:"
-#    ls -l /usr/src/app/mediafiles/  # Cette ligne affiche le contenu du répertoire mediafiles
-# else
-#    echo "Media files directory is not empty. Current contents:"
-#    ls -l /usr/src/app/mediafiles/  # Affiche le contenu si le dossier n'est pas vide au départ
-# fi
+# Copie des fichiers manquants depuis initial_media vers mediafiles
+echo "Checking for missing media files..."
+for file in /usr/src/app/initial_media/*; do
+    filename=$(basename "$file")
+    if [ ! -f "/usr/src/app/mediafiles/$filename" ]; then
+        echo "$filename not found in mediafiles. Copying..."
+        cp "$file" "/usr/src/app/mediafiles/"
+    else
+        echo "$filename already exists in mediafiles."
+    fi
+done
 
-ls -l /usr/src/app/mediafiles/
-cp -a /usr/src/app/initial_media/vue.png /usr/src/app/mediafiles/
-ls -l /usr/src/app/mediafiles/
+echo "Media files check completed."
 
 
 mkdir -p /usr/src/app/static
