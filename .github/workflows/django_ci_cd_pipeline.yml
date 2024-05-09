@@ -62,7 +62,7 @@ jobs:
         run: |
           echo "$EC2_SSH_KEY" > ec2_ssh_key.pem
           chmod 600 ec2_ssh_key.pem
-          ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && git pull && sed -i 's/\${TAG}/${{ github.sha }}/g' docker-compose.yml && cat docker-compose.yml && docker-compose pull && docker-compose up -d --build"
+          ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && git stash && git pull && sed -i 's/\${TAG}/${{ github.sha }}/g' docker-compose.yml && cat docker-compose.yml && docker-compose pull && docker-compose up -d --build"
 
 
 
