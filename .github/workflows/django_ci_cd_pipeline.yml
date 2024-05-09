@@ -33,16 +33,19 @@ jobs:
 
   build:
     needs: test
-    if: success() 
+    if: success()
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: |
-        docker build . --file Dockerfile --tag dimitrihoareau/portfolioapp:latest
-        docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-        docker push dimitrihoareau/portfolioapp:latest
+      - uses: actions/checkout@v3
+      - name: Build Django Docker image
+        run: docker build . --file Dockerfile --tag dimitrihoareau/portfolio:latest
+      - name: Build Nginx Docker image
+        run: docker build ./nginx --file ./nginx/Dockerfile --tag dimitrihoareau/portfolio-nginx:latest
+      - name: Push Docker images to Docker Hub
+        run: |
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker push dimitrihoareau/portfolio:latest
+          docker push dimitrihoareau/portfolio-nginx:latest
 
           
   deploy:
