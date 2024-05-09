@@ -11,6 +11,18 @@ then
     echo "PostgreSQL started"
 fi
 
+# Initialisation du répertoire de fichiers médias
+if [ -z "$(ls -A /usr/src/app/mediafiles)" ]; then
+   echo "Initializing media files..."
+   cp -a /usr/src/app/initial_media/. /usr/src/app/mediafiles/
+   echo "Media files initialized. Current contents:"
+   ls -l /usr/src/app/mediafiles/  # Cette ligne affiche le contenu du répertoire mediafiles
+else
+   echo "Media files directory is not empty. Current contents:"
+   ls -l /usr/src/app/mediafiles/  # Affiche le contenu si le dossier n'est pas vide au départ
+fi
+
+
 mkdir -p /usr/src/app/static
 
 # python manage.py flush --no-input # NEVER USE IN PRODUCTION

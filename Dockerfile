@@ -18,6 +18,8 @@ RUN pip install -r requirements.txt
 # Copy the project files
 COPY . .
 
+COPY initial_media /usr/src/app/initial_media
+
 # Make entrypoint.sh executable
 RUN chmod +x /usr/src/app/entrypoint.sh
 
