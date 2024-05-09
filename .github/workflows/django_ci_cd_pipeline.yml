@@ -38,34 +38,34 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Django Docker image
-        run: docker build . --file Dockerfile --tag dimitrihoareau/portfolio:latest
+        run: docker build . --file Dockerfile --tag dimitrihoareau/portfolio:${{ github.sha }}
       - name: Build Nginx Docker image
-        run: docker build ./nginx --file ./nginx/Dockerfile --tag dimitrihoareau/portfolio-nginx:latest
+        run: docker build ./nginx --file ./nginx/Dockerfile --tag dimitrihoareau/portfolio-nginx:${{ github.sha }}
       - name: Push Docker images to Docker Hub
         run: |
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
-          docker push dimitrihoareau/portfolio:latest
-          docker push dimitrihoareau/portfolio-nginx:latest
+          docker push dimitrihoareau/portfolio:${{ github.sha }}
+          docker push dimitrihoareau/portfolio-nginx:${{ github.sha }}
 
-          
+        
   deploy:
     runs-on: ubuntu-latest
     needs: build
     if: success()
     steps:
-    - uses: actions/checkout@v3
-  
-    - name: Deploy to EC2
-      env:
-        EC2_HOST: ${{ secrets.EC2_HOST }}
-        EC2_USER: ${{ secrets.EC2_USER }}
-        EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
-      run: |
-        echo "$EC2_SSH_KEY" > ec2_ssh_key.pem
-        chmod 600 ec2_ssh_key.pem
-        ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && git pull  && docker-compose pull && docker-compose up -d --build"
-
-
+      - uses: actions/checkout@v3
+      - name: Set Docker Image Tags
+        run: |
+          sed -i "s/\${TAG}/${{ github.sha }}/g" docker-compose.yml
+      - name: Deploy to EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          echo "$EC2_SSH_KEY" > ec2_ssh_key.pem
+          chmod 600 ec2_ssh_key.pem
+          ssh -o StrictHostKeyChecking=no -i ec2_ssh_key.pem $EC2_USER@$EC2_HOST "cd /home/ec2-user/dimitri-portfolio/ && git pull && docker-compose pull && docker-compose up -d --build"
 
 
 

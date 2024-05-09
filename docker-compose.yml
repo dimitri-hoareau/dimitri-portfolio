@@ -12,7 +12,7 @@ services:
 
   web:
     build: .
-    image: dimitrihoareau/portfolio
+    image: dimitrihoareau/portfolio:${TAG}
     command: gunicorn portfolio.wsgi:application --bind 0.0.0.0:8000 --workers 3
     env_file:
       - ./.env
@@ -24,6 +24,7 @@ services:
 
   nginx:
     build: ./nginx
+    image: dimitrihoareau/portfolio-nginx:${TAG}
     ports:
       - 80:80
       - 443:443
