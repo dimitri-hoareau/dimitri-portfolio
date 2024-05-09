@@ -24,8 +24,6 @@ services:
 
   nginx:
     build: ./nginx
-    # ports: configuration pour tests en local
-    #   - 8687:80
     ports:
       - 80:80
       - 443:443

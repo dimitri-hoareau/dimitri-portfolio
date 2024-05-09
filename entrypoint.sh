@@ -12,7 +12,6 @@ then
 fi
 
 mkdir -p /usr/src/app/static
-mkdir -p /usr/src/app/mediafiles
 
 # python manage.py flush --no-input # NEVER USE IN PRODUCTION
 python manage.py migrate

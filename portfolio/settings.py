@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # Load environment variables from .env.dev file
-dotenv_path = os.path.join(BASE_DIR, '.env.dev')
+dotenv_path = os.path.join(BASE_DIR, '.env')
 load_dotenv(dotenv_path)
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
@@ -30,8 +30,9 @@ ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = bool(os.environ.get("DEBUG", default=0))
-DEBUG = False
+DEBUG = (os.environ.get('DEBUG') == "True")
+print("debug")
+print(DEBUG)
 
 # Application definition
 
@@ -134,6 +135,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles/')
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+print(MEDIA_ROOT)
+print(STATIC_ROOT)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
