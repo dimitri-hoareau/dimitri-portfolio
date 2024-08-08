@@ -75,8 +75,7 @@ jobs:
             cat docker-compose.yml &&
             docker-compose pull &&
             docker-compose up -d --build &&
-            docker-compose run certbot renew &&
-            docker-compose kill -s SIGHUP nginx
+
           "
 
 
