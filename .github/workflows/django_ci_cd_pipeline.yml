@@ -88,9 +88,7 @@ jobs:
             git pull &&
             sed -i 's/\${TAG}/${{ github.sha }}/g' docker-compose.yml &&
             docker-compose pull &&
-            docker-compose up -d --build &&
-            docker-compose run certbot renew --webroot -w /var/www/certbot &&
-            docker-compose exec nginx nginx -s reload
+            docker-compose up -d --build
           "
 
 
