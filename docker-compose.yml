@@ -44,10 +44,9 @@ services:
       - /var/www/certbot:/var/www/certbot
       - certbot-etc:/etc/letsencrypt
     entrypoint: /bin/sh -c
-    command: "trap exit TERM; while :; do sleep 6h & wait ${!}; done"
+    command: "trap exit TERM; while :; do sleep 6h & wait $${!}; done"
     depends_on:
       - nginx
-
 
 volumes:
   static_volume:
