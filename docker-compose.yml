@@ -44,8 +44,6 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - /var/www/certbot:/var/www/certbot
-    entrypoint: ""
-    command: ""
     depends_on:
       - nginx
 volumes:
